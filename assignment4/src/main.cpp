@@ -1,23 +1,31 @@
-#include "Animal.hpp"
+#include "Shelter.hpp"
+#include <vector>
 
 int main()
 {
-	Animal dog = Animal(1, "Rex", "Andrew");
+	Dog dog = Dog(1, "Rex", "Chicken bones");
 
 	// copy constructor
-	Animal dog3 = dog;
+	Dog dog3 = dog;
 
-	Animal dog5 = Animal(3, "Miki", "Chris");
+	Dog dog5 = Dog(3, "Miki", "Scooby snacks");
 	// copy assignment operator
-	// Animal dog2(2, "Droll", "Brian");
+	// Dog dog2(2, "Droll", "Brian");
 	// dog2 = dog5;
 
 	// show dog info
-	std::cout << dog;
-	std::cout << dog3;
+	dog.show();
+	dog3.show();
+	dog5.show();
 
-	// copy assignment operator
-	// Animal dog2(2, "Droll", "Brian");
-	// dog2 = dog;
 
+	std::cout << "----------- Dog objects were created successfully -----------\n";
+
+
+	// adding the shelter
+	std::vector<Dog> dogs = {dog, dog5};
+
+	Shelter shelter1 = Shelter("Happy Pets", "Bucharest", dogs);
+
+	shelter1.show();
 }
